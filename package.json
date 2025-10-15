@@ -17,7 +17,7 @@
     "@types/node": "^20.2.5",
     "@typescript-eslint/eslint-plugin": "^8.46.1",
     "eslint": "^8.45.0",
-    "eslint-config-prettier": "^8.8.0",
+    "eslint-config-prettier": "^10.1.8",
     "jest": "^30.2.0",
     "eslint-plugin-prettier": "^5.5.4",
     "jest-fetch-mock": "^3.0.3",
