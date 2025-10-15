@@ -1,7 +1,9 @@
 import { ApiFetcher } from '../src/apiFetcher';
 import fetchMock from 'jest-fetch-mock';
 import { NetworkError, TimeoutError, ParseError } from '../src/errors';
-
+interface AbortError extends Error {
+    name: string;
+}
 
 describe('ApiFetcher', () => {
     beforeEach(() => {
@@ -49,7 +51,7 @@ describe('ApiFetcher', () => {
                 new Promise((_res, rej) => {
                     setTimeout(() => {
                         const e = new Error('Request aborted');
-                        (e as any).name = 'AbortError';
+                        (e as AbortError).name = 'AbortError';
                         rej(e);
                     }, 60);
                 })

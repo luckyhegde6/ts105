@@ -1,6 +1,6 @@
 # API Fetcher & Cache — TypeScript Learning Project
 
-![Coverage](./coverage-badge.svg)
+[![Coverage](coverage/badge.svg)](https://luckyhegde6.github.io/ts105/coverage/)
 ![Build](./build-badge.svg)
 
 A fully-typed, asynchronous data-fetching and caching library demonstrating Promises, async/await, retry logic with exponential backoff + jitter, structured error handling, and strong TypeScript inference.
