@@ -1,5 +1,8 @@
 # API Fetcher & Cache — TypeScript Learning Project
 
+![Coverage](./coverage-badge.svg)
+![Build](./build-badge.svg)
+
 A fully-typed, asynchronous data-fetching and caching library demonstrating Promises, async/await, retry logic with exponential backoff + jitter, structured error handling, and strong TypeScript inference.
 
 ## 🧩 Goals
@@ -82,3 +85,7 @@ Check [docs/LEARNING.md](docs/LEARNING.md) and [docs/OVERVIEW.md](docs/OVERVIEW.
 7. What are some common pitfalls when working with async code?
 
 For more questions, see [docs/INTERVIEW_QUESTIONS.md](docs/INTERVIEW_QUESTIONS.md).
+
+Jest coverage reports are viewable publicly at
+
+https://luckyhegde6.github.io/ts105/coverage/.
