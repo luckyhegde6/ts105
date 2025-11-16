@@ -8,18 +8,25 @@ permissions:
 jobs:
   dependabot:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.user.login == 'dependabot[bot]' && github.repository == '${{ github.repository }}'
+    if: github.event.pull_request.user.login == 'dependabot[bot' && github.repository == '${{ github.repository }}'
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
       - name: Dependabot metadata
         id: metadata
         uses: dependabot/fetch-metadata@v1
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
+      - name: Set up SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.DEPLOY_KEY }}" > ~/.ssh/id_ed25519
+          chmod 400 ~/.ssh/id_ed25519
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          chmod 400 ~/.ssh/known_hosts
+
       - name: Approve a PR
+        run: gh pr review --approve "$PR_URL"
         env:
           PR_URL: ${{github.event.pull_request.html_url}}
-          GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        run: |
-          echo "$GH_TOKEN" | gh auth login --with-token
-          gh pr review --approve "$PR_URL"
 
