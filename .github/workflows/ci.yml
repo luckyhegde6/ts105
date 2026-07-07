@@ -43,10 +43,12 @@ jobs:
         with:
           name: coverage-html
           path: coverage/lcov-report
+          if-no-files-found: error
 
   publish-coverage:
     runs-on: ubuntu-latest
     needs: build-test
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -55,10 +57,10 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: coverage-html
-          path: coverage/
+          path: ./coverage
 
       - name: Deploy coverage to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./coverage/lcov-report
+          publish_dir: ./coverage
