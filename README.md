@@ -70,22 +70,16 @@ if (err instanceof NetworkError) console.error('Network issue:', err.message);
 
 - CI: GitHub Actions workflow included.
 
-📚 Learning path
+## 📚 Documentation
 
-Check [docs/LEARNING.md](docs/LEARNING.md) and [docs/OVERVIEW.md](docs/OVERVIEW.md) for comprehensive learning resources.
+- [LEARNING.md](docs/LEARNING.md) — Async TypeScript learning notes
+- [OVERVIEW.md](docs/OVERVIEW.md) — HLD & LLD overview
+- [promises.md](docs/promises.md) — Promises deep dive
+- [async-await.md](docs/async-await.md) — Async/await best practices
+- [error-handling.md](docs/error-handling.md) — Structured error patterns
+- [retry-logic.md](docs/retry-logic.md) — Exponential backoff design
+- [INTERVIEW_QUESTIONS.md](docs/INTERVIEW_QUESTIONS.md) — Interview prep
+- [design-patterns.md](docs/design-patterns.md) — Design patterns in depth
+- [NEETCODE.md](docs/NEETCODE.md) — Sequence diagram, edge cases, complexity, patterns
 
-### Interview Questions — Async & Caching
-
-1. What are Promises and how do they work in JavaScript?
-2. Explain the difference between `async/await` and traditional promise chaining.
-3. How can you implement retry logic in an API call?
-4. What is exponential backoff and why is it useful in network requests?
-5. Describe a caching strategy you could use for API responses.
-6. How do you handle errors in asynchronous code?
-7. What are some common pitfalls when working with async code?
-
-For more questions, see [docs/INTERVIEW_QUESTIONS.md](docs/INTERVIEW_QUESTIONS.md).
-
-Jest coverage reports are viewable publicly at
-
-https://luckyhegde6.github.io/ts105/coverage/.
+Jest coverage reports are viewable publicly at https://luckyhegde6.github.io/ts105/coverage/.
